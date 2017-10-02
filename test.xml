@@ -1,0 +1,23 @@
+<datapower-configuration version="3">
+   <export-details>
+      <domain>DOMAINNAME</domain>
+   </export-details>
+   <configuration domain="DOMAINNAME1">
+      
+	  <ConfigDeploymentPolicy name="DEPLOYMENTPOLICYNAME">
+         <!--HTTP FSH-->
+         <ModifiedConfig>
+            <Match>*/*/protocol/http?Name=http_fsh_OutageApp&Property=LocalPort</Match>
+            <Type>change</Type>
+            <Property/>
+            <Value>@http_fsh_OutageApp.LocalPort@</Value>
+         </ModifiedConfig>
+         <ModifiedConfig>
+            <Match>*/*/protocol/http?Name=http_fsh_OutageApp&Property=LocalAddress</Match>
+            <Type>change</Type>
+            <Property/>
+            <Value>@LocalAddress@</Value>
+         </ModifiedConfig>
+      </ConfigDeploymentPolicy>
+   </configuration>
+</datapower-configuration>
